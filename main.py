@@ -92,3 +92,28 @@ print(my_set)
 my_set.add(99)
 print(my_set)
 
+# operators and keywords
+a = 10
+if a <= 15:
+    print ("a <= 15")
+elif a <= 25:
+    print ("15 < a <= 25")
+else:
+    print ("25 < a")
+
+m = "a"
+if m == "a":
+    pass
+elif m == "b":
+    pass
+elif m == "c":
+    pass
+else:
+    pass
+
+# is equivalent to 
+match m:
+    case "a": pass
+    case "b": pass
+    case "c": pass
+    case _: pass # default behavior corresponding to else
