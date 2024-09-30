@@ -147,3 +147,37 @@ for i in range(10, 20):
 print ("for loop with range(10, 20, 3)")
 for i in range(10, 20, 3):
     print (i)
+
+# operators
+# +
+tuple1 = (4, 5)
+tuple2 = (6, 15)
+print(tuple1 + tuple2)
+# print ("my_string" + 4)
+
+# -, *, /, //
+# float division
+my_result = 15 / 2
+print (type(my_result))
+print(my_result)
+
+# integer division
+my_result2 = 15 // 2
+print (type(my_result2))
+print(my_result2)
+
+# %
+my_result3 = 15 % 2
+print(my_result3)
+
+# ** power operator
+print (2 ** 5)
+
+# =, ==, +=, -=, *=, /=
+
+# !=, <, <=, >, >=
+
+# and, or, not 
+# is, is not
+# in 
+
