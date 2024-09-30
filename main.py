@@ -117,3 +117,21 @@ match m:
     case "b": pass
     case "c": pass
     case _: pass # default behavior corresponding to else
+
+print ("while loop")
+x = 0
+while x < 10:
+    print (x)
+    x += 1  # x = x + 1
+
+print ("for loop")
+for i in range(10):
+    print (i)
+
+print ("for loop")
+for i in range(10):
+    if i == 6:
+        break   #early termination of a loop
+    if i == 3:
+        continue    # skip the remainder of this iteration
+    print (i)
