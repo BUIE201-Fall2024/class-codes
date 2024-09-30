@@ -1,3 +1,5 @@
+import time
+
 print("Hello, IE 201!")
 print("Class of Fall 2024!")
 print("How are you?")
@@ -179,5 +181,49 @@ print (2 ** 5)
 
 # and, or, not 
 # is, is not
-# in 
 
+x = ["apple", "banana", "cherry"]
+y = x
+print(x is y)
+print(x == y)
+
+z = ["apple", "banana", "cherry"]
+print(x is z)
+print(x == z)
+
+# in 
+if "IE 201" in my_dict:
+    print("IE 201 is taught by " + my_dict["IE 201"])
+else:
+    print("IE 201 is not taught this semester")
+
+my_int_list = list(range(10))
+print(my_int_list)
+
+if 5 in my_int_list:
+    print("5 is found in list")
+else:
+    print("5 is not found in list")
+
+my_int_set = set(range(10))
+print(my_int_set)
+
+if 5 in my_int_set:
+    print("5 is found in set")
+else:
+    print("5 is not found in set")
+
+for r in [10, 500, 10000, 50000, 1000000, 10000000, 100000000]:
+    print ("r = ", r)
+    l = list(range(r))
+    s = set(range(r))
+
+    start_s = time.time()
+    print (-1 in s)
+    end_s = time.time()
+    print ("set lookup took ", end_s - start_s)
+
+    start_l = time.time()
+    print (-1 in l)
+    end_l = time.time()
+    print ("list lookup took ", end_l - start_l)
