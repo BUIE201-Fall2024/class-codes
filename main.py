@@ -78,3 +78,17 @@ print ("IE 201 is taught by: " + my_dict["IE 201"])
 
 # lookup of non-existing keys throw error
 # print ("IE 203 is taught by: " + my_dict["IE 203"])
+
+# list can have duplicate values of the same item
+my_list.append(99)
+print(my_list)
+
+my_set = {99, 5, 7, 9, 4.15, 'my string'}
+print(my_set)
+my_set.add(149)
+print(my_set)
+
+# no duplicates are allowed in set
+my_set.add(99)
+print(my_set)
+
