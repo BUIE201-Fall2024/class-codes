@@ -83,6 +83,10 @@ print ("IE 201 is taught by: " + my_dict["IE 201"])
 my_list.append(99)
 print(my_list)
 
+# eliminate duplicates in a list
+my_list = list(set(my_list))
+print(my_list)
+
 my_set = {99, 5, 7, 9, 4.15, 'my string'}
 print(my_set)
 my_set.add(149)
@@ -134,4 +138,12 @@ for i in range(10):
         break   #early termination of a loop
     if i == 3:
         continue    # skip the remainder of this iteration
+    print (i)
+
+print ("for loop with range(10, 20)")
+for i in range(10, 20):
+    print (i)
+
+print ("for loop with range(10, 20, 3)")
+for i in range(10, 20, 3):
     print (i)
