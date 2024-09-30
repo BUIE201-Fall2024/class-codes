@@ -46,3 +46,35 @@ else:
     print ("x + y is not approximately 0.3")
 
 # testing branch
+
+# list
+my_list = [3, 5, 7]
+print(my_list)
+my_list.append(9)
+print(my_list)
+
+my_list.append(4.15)
+my_list.append("my string")
+my_list[0] = 99
+print(my_list)
+
+my_tuple = (3, 5, 7)
+print(my_tuple)
+# no append function in tuples
+# my_tuple.append(9)
+# no item assignment in tuples
+# tuples are immutable
+# my_tuple[0] = 99
+
+# dictionary keeps track of keys -> values
+my_dict = {"IE 201": "Z. Caner Taşkın",
+           "IE 202": "Tınaz Ekim",
+           "IE 255": "Wolfgang Hormann"}
+
+print(my_dict)
+
+# lookup of existing keys
+print ("IE 201 is taught by: " + my_dict["IE 201"])
+
+# lookup of non-existing keys throw error
+# print ("IE 203 is taught by: " + my_dict["IE 203"])
