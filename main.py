@@ -49,3 +49,19 @@ def bar(x, y, *rest):
     pass
 
 bar(10, 5, 35, 35, "fadfas", 3.24)
+
+
+# function parameters are local variables
+def check_age(age):
+    # avoid using global variables
+    # global age
+    age = 15
+    if age >= 18:
+        print ("You are an adult because your age is ", age)
+    else:
+        print ("You are not yet an adult because your age is ", age)
+
+age = 29
+print ("age before function call ", age)
+check_age(age)
+print ("age after function call ", age)
