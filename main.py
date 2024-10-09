@@ -23,10 +23,14 @@ def print_date(date):
     print("The date printed using print_date is {}/{}/{}".format(date.Day, date.Month, date.Year))
 
 class Date:
-    def __init__(self) -> None:
+    def __init__(self, Year = 1970, Month = 1, Day = 1) -> None:
         self.Year = 1970
         self.Month = 1
         self.Day = 1
+        self.set_date(Year, Month, Day)
+        # self.Year = Year
+        # self.Month = Month
+        # self.Day = Day
     
     def print(self):
         print("The date is {}/{}/{}".format(self.Day, self.Month, self.Year))
@@ -61,3 +65,10 @@ tomorrow.print()
 
 tomorrow.set_date(2024, -10, 10)
 tomorrow.print()
+
+next_wednesday = Date(2024, 10, 16)
+next_wednesday.print()
+# Date.print(next_wednesday)
+
+next_tuesday = Date(-3424, 432, 324)
+next_tuesday.print()
