@@ -1,57 +1,22 @@
-import time
+class Student:
+    def __init__(self) -> None:
+        self.ID = 0
+        self.Name = None
 
-def fibonacci_iterative(n):
-    if n <= 2:
-        return 1
-    
-    prevprev = 1
-    prev = 1
-    for i in range(n-2):
-        current = prevprev + prev
-        prevprev = prev
-        prev = current
-    return current
- 
-fib5 = fibonacci_iterative(5)
-print(fib5)
+std1 = Student()
+std1.ID = 34242
+std1.Name = "caner"
+print(std1.ID)
+print(std1.Name)
 
-fib2 = fibonacci_iterative(2)
-print(fib2)
+std2 = Student()
+std2.ID = 42453
+std2.Name = "tamer"
 
-def fibonacci_recursive(n):
-    if n == 1 or n == 2:
-        return 1
-    fib1 = fibonacci_recursive(n - 1)
-    fib2 = fibonacci_recursive(n - 2)
-    return fib1 + fib2
+# don't use attributes that are not defined in the class
+# std2.Surname = "unal"
 
-fib5r = fibonacci_recursive(5)
-print(fib5r)
+print(std2.ID)
+print(std2.Name)
 
-# cache: dictionary n -> F(n)
-def fibonacci_memoized(n, cache):
-    if n == 1 or n == 2:
-        return 1
-    if n in cache:
-        return cache[n]
-    fib1 = fibonacci_memoized(n - 1, cache)
-    fib2 = fibonacci_memoized(n - 2, cache)
-    cache[n] = fib1 + fib2
-    return fib1 + fib2    
 
-n = 40
-start_i = time.time()
-fib5 = fibonacci_iterative(n)
-end_i = time.time()
-print("fibonacci_iterative took ", end_i - start_i)
-
-cache = {}
-start_m = time.time()
-fib5m = fibonacci_memoized(n, cache)
-end_m = time.time()
-print("fibonacci_memoized took ", end_m - start_m)
-
-start_r = time.time()
-fib5r = fibonacci_recursive(n)
-end_r = time.time()
-print("fibonacci_recursive took ", end_r - start_r)
