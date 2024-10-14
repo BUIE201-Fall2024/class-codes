@@ -53,11 +53,54 @@ print(id(s.capitalize()))
 
 
 def g(value):
-    print("within g() - before", value)
+    print("within g() - before", value, id(value))
     value += 10
-    print("within g() - after", value)
+    print("within g() - after", value, id(value))
 
 value = 5
-print("outside g() - before", value)
+print("outside g() - before", value, id(value))
 g(value)
-print("outside g() - after", value)
+print("outside g() - after", value, id(value))
+
+
+def f(date):
+    print("within f() - before", id(date))
+    date.print()
+    date.set_date(2025, 10, 14)
+    print("within f() - after", id(date))
+    date.print()
+
+date = Date(2024, 10, 14)
+print("outside f() - before", id(date))
+date.print()
+f(date)
+print("outside f() - after", id(date))
+date.print()
+
+# immutable
+# int, float, str, tuple
+# mutable
+# set, dict, list
+
+f = 3.14
+print ("id(f): ", id(f))
+f *= 2
+print ("id(f): ", id(f))
+t = (4, 2, 1)
+# t[0] = 9
+
+my_dict = {"IE 201": "Caner", 
+           "IE 255": "Wolfgang"}
+
+is_201_taught = "IE 201" in my_dict
+if (is_201_taught):
+    my_dict["IE 201"]
+
+# don't use mutable types as dictionary keys
+today = [Date(2024, 10, 14)]
+republicDate = [Date(1923, 10, 29)]
+my_events_dict = {today: "IE 201 was taught",
+                  republicDate: "The republic was formed"}
+
+if (today in my_events_dict):
+    print(my_events_dict[today])
