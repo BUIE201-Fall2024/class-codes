@@ -50,3 +50,14 @@ i2f.is_integer()
 
 print(id(s))
 print(id(s.capitalize()))
+
+
+def g(value):
+    print("within g() - before", value)
+    value += 10
+    print("within g() - after", value)
+
+value = 5
+print("outside g() - before", value)
+g(value)
+print("outside g() - after", value)
