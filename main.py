@@ -1,4 +1,5 @@
 import sys
+import gc
 
 class Date:
     def __init__(self, Year = 1970, Month = 1, Day = 1) -> None:
@@ -6,6 +7,8 @@ class Date:
         self.Month = 1
         self.Day = 1
         self.set_date(Year, Month, Day)
+        self.prev_day = None
+        self.next_day = None
         print("The date object just created is {}/{}/{}".format(self.Day, self.Month, self.Year))
 
     def __del__(self):
@@ -24,27 +27,28 @@ class Date:
             self.Day = Day
             self.Month = Month
             self.Year = Year
+    
+    def set_next_day(self, date):
+        self.next_day = date
+
+    def set_prev_day(self, date):
+        self.prev_day = date
 
 today = Date(2024, 10, 21)
-print("today refcount: ", sys.getrefcount(today))
 today.print()
-tomorrow = today
-print("today refcount: ", sys.getrefcount(today))
+
+tomorrow = Date(2024, 10, 22)
+today.print()
+
+
+today.set_next_day(tomorrow)
+tomorrow.set_prev_day(today)
+
+gc.collect()
+
 del today
-print("today refcount: ", sys.getrefcount(tomorrow))
-tomorrow.print()
 del tomorrow
 
+gc.collect()
 
-def f():
-    print("begin f")
-    next_week = Date(2024, 10, 28)
-    next_week.print()
-    print("end f")
-    return next_week
-
-print("before f")
-# f()
-a = f()
-print("after f")
-
+i = 5
