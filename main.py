@@ -27,7 +27,24 @@ class Date:
 
 today = Date(2024, 10, 21)
 print("today refcount: ", sys.getrefcount(today))
+today.print()
 tomorrow = today
 print("today refcount: ", sys.getrefcount(today))
-today.print()
+del today
+print("today refcount: ", sys.getrefcount(tomorrow))
+tomorrow.print()
+del tomorrow
+
+
+def f():
+    print("begin f")
+    next_week = Date(2024, 10, 28)
+    next_week.print()
+    print("end f")
+    return next_week
+
+print("before f")
+# f()
+a = f()
+print("after f")
 
